@@ -6,7 +6,7 @@ const Demo = React.lazy(() => import("./features/demo/Demo"));
 function App() {
   return (
     <div>
-      <Suspense fallback={<p>loading...</p>}>
+      <Suspense fallback={<h3>Loading ...</h3>}>
         <Demo />
       </Suspense>
     </div>

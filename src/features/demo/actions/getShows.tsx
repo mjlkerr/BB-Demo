@@ -1,9 +1,9 @@
 
 import axios from "axios";
 
-export const delay = (ms: number | undefined) => new Promise(res => setTimeout(res, ms));
+const delay = (ms: number | undefined) => new Promise(res => setTimeout(res, ms));
 
-export const getShows = () => {
+const getImages = () => {
  let status = "pending";
  let result: any;
  let suspender = axios.get(`https://api.tvmaze.com/search/shows?q=party`)
@@ -30,3 +30,8 @@ export const getShows = () => {
    },
  };
 };
+
+export const getShows = () =>{
+  delay(5000);
+  return getImages();
+}

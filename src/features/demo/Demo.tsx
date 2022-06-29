@@ -1,14 +1,12 @@
 import React, { ReactElement } from "react";
 import './Demo.css'
-import { getShows, delay } from "./actions/getShows";
+import { getShows } from "./actions/getShows";
 
 const resource = getShows();
 
-//wait a little longer so we can see the delay
-delay(2000);
 
 const Demo = (): ReactElement => {
-  const shows = resource?.read();
+  const shows = resource.read();
   return (
     <div className="Demo">
       {shows?.map((show: 
